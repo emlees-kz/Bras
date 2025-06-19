@@ -677,6 +677,9 @@ body {
         width: 1.5rem;
         height: 1.5rem;
     }
+    .mediatext {
+        font-size: 1.25rem;
+    }
 }
 
 @media (max-width: 576px) {
