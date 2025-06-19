@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вузы Кыргызстана</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <nav class="nav">
+            <div class="logo">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Red circular background -->
+                <circle cx="100" cy="100" r="100" fill="#C8102E" />
+
+                <!-- Sun rays -->
+                <g transform="rotate(0 100 100)">
+                  <circle cx="100" cy="100" r="50" fill="#F4C542" />
+                  <g stroke="#C8102E" stroke-width="5">
+                    <!-- Sun rays in a radial pattern -->
+                    <line x1="100" y1="30" x2="100" y2="0" />
+                    <line x1="100" y1="170" x2="100" y2="200" />
+                    <line x1="30" y1="100" x2="0" y2="100" />
+                    <line x1="170" y1="100" x2="200" y2="100" />
+                    <line x1="50" y1="50" x2="30" y2="30" />
+                    <line x1="150" y1="150" x2="170" y2="170" />
+                    <line x1="150" y1="50" x2="170" y2="30" />
+                    <line x1="50" y1="150" x2="30" y2="170" />
+                  </g>
+                </g>
+                <!-- Tunduk (Yurt symbol, stylized) -->
+                <g transform="translate(100, 100) scale(0.5)">
+                  <circle
+                    r="60"
+                    fill="none"
+                    stroke="#C8102E"
+                    stroke-width="10"
+                  />
+                  <path
+                    d="M -30 -30 L 30 30 M 30 -30 L -30 30 M -35 0 L 35 0 M 0 -35 L 0 35"
+                    stroke="#C8102E"
+                    stroke-width="8"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div class="burger" id="burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <ul class="menu">
+              <li class="nav-link"><a href="../index.html">Главная</a></li>
+              <li class="nav-link">
+                <a href="./catalog.html">Каталог</a>
+              </li>
+              <li class="nav-link">
+                <a href="./analytics.html">Аналитика</a>
+              </li>
+              <li class="nav-link"><a href="./news.html">Новости</a></li>
+              <li class="nav-link">
+                <a href="./programs.html">Программы обучения</a>
+              </li>
+              <li class="nav-link">
+                <a href="./contacts.html">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main class="main">
+        <section class="catalog">
+          <div class="container">
+            <h1>Каталог ВУЗов Бишкека</h1>
+
+            <!-- Фильтр -->
+            <div class="catalog-filter">
+              <label for="direction">Направление:</label>
+              <select id="direction">
+                <option value="all">Все</option>
+                <option value="technical">Технические</option>
+                <option value="medical">Медицинские</option>
+                <option value="economic">Экономические</option>
+                <option value="humanitarian">Гуманитарные</option>
+                <option value="agricultural">Аграрные</option>
+              </select>
+            </div>
+
+            <!-- Карточки вузов -->
+            <div class="catalog-grid">
+              <!-- Карточка 1 -->
+              <div class="university-card" data-direction="technical">
+                <img src="../imgs/knu.jpg" alt="КНУ" />
+                <h3>Кыргызский национальный университет им. Ж. Баласагына</h3>
+                <p>Технические, гуманитарные, экономические направления</p>
+                <button class="details-button" data-university="knu">
+                  Подробнее
+                </button>
+              </div>
+              <!-- Карточка 2 -->
+              <div class="university-card" data-direction="technical">
+                <img src="../imgs/kgtu.jpg" alt="КГТУ" />
+                <h3>
+                  Кыргызский государственный технический университет им. И.
+                  Раззакова
+                </h3>
+                <p>Технические и инженерные направления</p>
+                <button class="details-button" data-university="kstu">
+                  Подробнее
+                </button>
+              </div>
+              <!-- Карточка 3 -->
+              <div class="university-card" data-direction="medical">
+                <img src="../imgs/kgma.jpg" alt="КГМА" />
+                <h3>
+                  Кыргызская государственная медицинская академия им. И.
+                  Ахунбаева
+                </h3>
+                <p>Медицинские и фармацевтические направления</p>
+                <button class="details-button" data-university="kgma">
+                  Подробнее
+                </button>
+              </div>
+              <!-- Карточка 4 -->
+              <div class="university-card" data-direction="economic">
+                <img src="../imgs/keu.jpg" alt="КЭУ" />
+                <h3>
+                  Кыргызский экономический университет им. М. Рыскулбекова
+                </h3>
+                <p>Экономика, финансы, менеджмент</p>
+                <button class="details-button" data-university="keu">
+                  Подробнее
+                </button>
+              </div>
+              <!-- Карточка 5 -->
+              <div class="university-card" data-direction="humanitarian">
+                <img src="../imgs/krsu.jpg" alt="КРСУ" />
+                <h3>
+                  Кыргызско-Российский Славянский университет им. Б. Ельцина
+                </h3>
+                <p>Гуманитарные, технические, медицинские направления</p>
+                <button class="details-button" data-university="krsu">
+                  Подробнее
+                </button>
+              </div>
+              <!-- Карточка 6 -->
+              <div class="university-card" data-direction="humanitarian">
+                <img src="../imgs/auca.jpg" alt="АУЦА" />
+                <h3>Американский университет в Центральной Азии</h3>
+                <p>Международные отношения, экономика, право</p>
+                <button class="details-button" data-university="auca">
+                  Подробнее
+                </button>
+              </div>
+              <!-- Карточка 7 -->
+              <div class="university-card" data-direction="agricultural">
+                <img src="../imgs/knau.jpg" alt="КНАУ" />
+                <h3>
+                  Кыргызский национальный аграрный университет им. К. Скрябина
+                </h3>
+                <p>Аграрные и сельскохозяйственные направления</p>
+                <button class="details-button" data-university="knau">
+                  Подробнее
+                </button>
+              </div>
+              <!-- Карточка 8 -->
+              <div class="university-card" data-direction="technical">
+                <img src="../imgs/ksucta.jpg" alt="КГУСТА" />
+                <h3>
+                  Кыргызский государственный университет строительства,
+                  транспорта и архитектуры
+                </h3>
+                <p>Строительство, транспорт, архитектура</p>
+                <button class="details-button" data-university="ksucta">
+                  Подробнее
+                </button>
+              </div>
+              <!-- Карточка 9 -->
+              <div class="university-card" data-direction="humanitarian">
+                <img src="../imgs/bhu.jpg" alt="БГУ" />
+                <h3>Бишкекский гуманитарный университет им. К. Карасаева</h3>
+                <p>Гуманитарные и педагогические направления</p>
+                <button class="details-button" data-university="bhu">
+                  Подробнее
+                </button>
+              </div>
+              <!-- Карточка 10 -->
+              <div class="university-card" data-direction="technical">
+                <img src="../imgs/manas.jpeg" alt="Манас" />
+                <h3>Кыргызско-Турецкий университет "Манас"</h3>
+                <p>Технические, гуманитарные, экономические направления</p>
+                <button class="details-button" data-university="manas">
+                  Подробнее
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Модальное окно -->
+      <div class="modal" id="university-modal" style="display: none">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <div id="modal-body">
+            <!-- Сюда будет подгружаться информация о выбранном вузе -->
+          </div>
+        </div>
+      </div>
+      <footer class="footer" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container footer-content">
+          <div class="footer-logo">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="100" fill="#C8102E" />
+              <g transform="rotate(0 100 100)">
+                <circle cx="100" cy="100" r="50" fill="#F4C542" />
+                <g stroke="#C8102E" stroke-width="5">
+                  <line x1="100" y1="30" x2="100" y2="0" />
+                  <line x1="100" y1="170" x2="100" y2="200" />
+                  <line x1="30" y1="100" x2="0" y2="100" />
+                  <line x1="170" y1="100" x2="200" y2="100" />
+                  <line x1="50" y1="50" x2="30" y2="30" />
+                  <line x1="150" y1="150" x2="170" y2="170" />
+                  <line x1="150" y1="50" x2="170" y2="30" />
+                  <line x1="50" y1="150" x2="30" y2="170" />
+                </g>
+              </g>
+            </svg>
+            <span>Вузы Кыргызстана</span>
+          </div>
+
+          <div class="footer-nav">
+            <a href="#">Главная</a>
+            <a href="#">Каталог</a>
+            <a href="#">Аналитика</a>
+            <a href="#">Программы</a>
+            <a href="#">Контакты</a>
+          </div>
+
+          <div class="footer-contact">
+            <p>Email: info@universities.kg</p>
+            <p>Тел: +996 (700) 123-456</p>
+            <div class="footer-socials">
+              <a href="#"><img src="./imgs/instagram.svg" alt="insta" /></a>
+              <a href="#"><img src="./imgs/facebook.svg" alt="fb" /></a>
+              <a href="#"><img src="./imgs/telegram.svg" alt="tg" /></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2025 Вузы Кыргызстана. Все права защищены.</p>
+        </div>
+      </footer>
+    </div>
+    <script src="../js/menu.js"></script>
+    <script src="../data/universities.js"></script>
+    <script src="../js/catalog.js" defer></script>
+  </body>
+</html>
