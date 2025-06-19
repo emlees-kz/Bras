@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Методы - Имитационное моделирование</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div class="logo-icon me-3">
+                    <i data-lucide="brain-circuit"></i>
+                </div>
+                <div>
+                    <div class="logo-title">SimuLearn</div>
+                    <div class="logo-subtitle">Имитационное моделирование</div>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i data-lucide="home"></i>
+                            Главная
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="theory.html">
+                            <i data-lucide="book-open"></i>
+                            Теория
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="methods.html">
+                            <i data-lucide="target"></i>
+                            Методы
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="examples.html">
+                            <i data-lucide="lightbulb"></i>
+                            Примеры
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="practice.html">
+                            <i data-lucide="play-circle"></i>
+                            Практика
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tests.html">
+                            <i data-lucide="check-circle"></i>
+                            Тесты
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-bold mb-3">Методы моделирования</h1>
+                <p class="lead text-muted">
+                    Изучите основные методы и техники имитационного моделирования 
+                    с практическими примерами и инструментами
+                </p>
+            </div>
+
+            <!-- Stats -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="card bg-light border-0">
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-md-3">
+                                    <div class="stat-number text-primary">6</div>
+                                    <div class="stat-label">основных методов</div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="stat-number text-success">20+</div>
+                                    <div class="stat-label">областей применения</div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="stat-number text-warning">15+</div>
+                                    <div class="stat-label">инструментов</div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="stat-number text-info">10</div>
+                                    <div class="stat-label">часов практики</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Methods Grid -->
+            <div class="row g-4">
+                <!-- Monte Carlo Method -->
+                <div class="col-lg-6">
+                    <div class="card h-100 method-card">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="card-title mb-0">
+                                <i data-lucide="dice-6" class="me-2"></i>
+                                Метод Монте-Карло
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Статистический метод для решения задач с использованием случайных чисел</p>
+                            
+                            <div class="mb-3">
+                                <div class="d-flex gap-2 mb-2">
+                                    <span class="badge bg-success">Начальный</span>
+                                    <span class="badge bg-info">Статистический анализ</span>
+                                </div>
+                                <small class="text-muted">⏱️ 45 мин</small>
+                            </div>
+
+                            <h6>Ключевые концепции:</h6>
+                            <ul class="list-unstyled">
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Генерация случайных выборок</li>
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Статистическая оценка результатов</li>
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Применение закона больших чисел</li>
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Построение доверительных интервалов</li>
+                            </ul>
+
+                            <h6>Области применения:</h6>
+                            <div class="mb-3">
+                                <span class="badge bg-outline-secondary me-1">Финансовое моделирование</span>
+                                <span class="badge bg-outline-secondary me-1">Оценка рисков</span>
+                                <span class="badge bg-outline-secondary me-1">Интегрирование</span>
+                            </div>
+
+                            <h6>Инструменты:</h6>
+                            <div class="mb-3">
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>Python</span>
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>R</span>
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>MATLAB</span>
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>Excel</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-primary flex-fill" onclick="learnMethod('Метод Монте-Карло')">
+                                    <i data-lucide="book-open" class="me-2"></i>Изучить
+                                </button>
+                                <button class="btn btn-outline-primary flex-fill" onclick="practiceMethod('Метод Монте-Карло')">
+                                    <i data-lucide="play-circle" class="me-2"></i>Практика
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Discrete Event Simulation -->
+                <div class="col-lg-6">
+                    <div class="card h-100 method-card">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="card-title mb-0">
+                                <i data-lucide="clock" class="me-2"></i>
+                                Дискретно-событийное моделирование
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Моделирование систем как последовательности событий во времени</p>
+                            
+                            <div class="mb-3">
+                                <div class="d-flex gap-2 mb-2">
+                                    <span class="badge bg-warning">Средний</span>
+                                    <span class="badge bg-info">Системы массового обслуживания</span>
+                                </div>
+                                <small class="text-muted">⏱️ 90 мин</small>
+                            </div>
+
+                            <h6>Ключевые концепции:</h6>
+                            <ul class="list-unstyled">
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Календарь событий</li>
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Обработка очередей</li>
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Управление ресурсами</li>
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Сбор статистики</li>
+                            </ul>
+
+                            <h6>Области применения:</h6>
+                            <div class="mb-3">
+                                <span class="badge bg-outline-secondary me-1">Банковские системы</span>
+                                <span class="badge bg-outline-secondary me-1">Производственные линии</span>
+                                <span class="badge bg-outline-secondary me-1">Транспорт</span>
+                            </div>
+
+                            <h6>Инструменты:</h6>
+                            <div class="mb-3">
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>AnyLogic</span>
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>Arena</span>
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>GPSS</span>
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>SimPy</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-success flex-fill" onclick="learnMethod('Дискретно-событийное моделирование')">
+                                    <i data-lucide="book-open" class="me-2"></i>Изучить
+                                </button>
+                                <button class="btn btn-outline-success flex-fill" onclick="practiceMethod('Дискретно-событийное моделирование')">
+                                    <i data-lucide="play-circle" class="me-2"></i>Практика
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Dynamics -->
+                <div class="col-lg-6">
+                    <div class="card h-100 method-card">
+                        <div class="card-header bg-warning text-dark">
+                            <h5 class="card-title mb-0">
+                                <i data-lucide="trending-up" class="me-2"></i>
+                                Системная динамика
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Методология моделирования сложных систем с обратными связями</p>
+                            
+                            <div class="mb-3">
+                                <div class="d-flex gap-2 mb-2">
+                                    <span class="badge bg-danger">Продвинутый</span>
+                                    <span class="badge bg-info">Сложные системы</span>
+                                </div>
+                                <small class="text-muted">⏱️ 120 мин</small>
+                            </div>
+
+                            <h6>Ключевые концепции:</h6>
+                            <ul class="list-unstyled">
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Диаграммы причинных связей</li>
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Потоковые модели</li>
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Циклы обратной связи</li>
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Анализ политик</li>
+                            </ul>
+
+                            <h6>Области применения:</h6>
+                            <div class="mb-3">
+                                <span class="badge bg-outline-secondary me-1">Экономическое планирование</span>
+                                <span class="badge bg-outline-secondary me-1">Экология</span>
+                                <span class="badge bg-outline-secondary me-1">Урбанистика</span>
+                            </div>
+
+                            <h6>Инструменты:</h6>
+                            <div class="mb-3">
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>Vensim</span>
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>Stella</span>
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>PowerSim</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-warning flex-fill" onclick="learnMethod('Системная динамика')">
+                                    <i data-lucide="book-open" class="me-2"></i>Изучить
+                                </button>
+                                <button class="btn btn-outline-warning flex-fill" onclick="practiceMethod('Системная динамика')">
+                                    <i data-lucide="play-circle" class="me-2"></i>Практика
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agent-Based Modeling -->
+                <div class="col-lg-6">
+                    <div class="card h-100 method-card">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="card-title mb-0">
+                                <i data-lucide="users" class="me-2"></i>
+                                Агентное моделирование
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Моделирование поведения автономных агентов и их взаимодействий</p>
+                            
+                            <div class="mb-3">
+                                <div class="d-flex gap-2 mb-2">
+                                    <span class="badge bg-danger">Продвинутый</span>
+                                    <span class="badge bg-info">Мультиагентные системы</span>
+                                </div>
+                                <small class="text-muted">⏱️ 100 мин</small>
+                            </div>
+
+                            <h6>Ключевые концепции:</h6>
+                            <ul class="list-unstyled">
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Определение агентов</li>
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Правила взаимодействия</li>
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Эмерджентные свойства</li>
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Пространственные модели</li>
+                            </ul>
+
+                            <h6>Области применения:</h6>
+                            <div class="mb-3">
+                                <span class="badge bg-outline-secondary me-1">Социальные сети</span>
+                                <span class="badge bg-outline-secondary me-1">Рынки</span>
+                                <span class="badge bg-outline-secondary me-1">Эпидемиология</span>
+                            </div>
+
+                            <h6>Инструменты:</h6>
+                            <div class="mb-3">
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>NetLogo</span>
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>MESA</span>
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>JADE</span>
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>Repast</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-info flex-fill" onclick="learnMethod('Агентное моделирование')">
+                                    <i data-lucide="book-open" class="me-2"></i>Изучить
+                                </button>
+                                <button class="btn btn-outline-info flex-fill" onclick="practiceMethod('Агентное моделирование')">
+                                    <i data-lucide="play-circle" class="me-2"></i>Практика
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Finite Element Method -->
+                <div class="col-lg-6">
+                    <div class="card h-100 method-card">
+                        <div class="card-header bg-secondary text-white">
+                            <h5 class="card-title mb-0">
+                                <i data-lucide="grid-3x3" class="me-2"></i>
+                                Метод конечных элементов
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Численный метод решения дифференциальных уравнений</p>
+                            
+                            <div class="mb-3">
+                                <div class="d-flex gap-2 mb-2">
+                                    <span class="badge bg-danger">Продвинутый</span>
+                                    <span class="badge bg-info">Физическое моделирование</span>
+                                </div>
+                                <small class="text-muted">⏱️ 150 мин</small>
+                            </div>
+
+                            <h6>Ключевые концепции:</h6>
+                            <ul class="list-unstyled">
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Разбиение на элементы</li>
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Аппроксимация функций</li>
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Сборка системы уравнений</li>
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Решение и постобработка</li>
+                            </ul>
+
+                            <h6>Области применения:</h6>
+                            <div class="mb-3">
+                                <span class="badge bg-outline-secondary me-1">Механика</span>
+                                <span class="badge bg-outline-secondary me-1">Теплопередача</span>
+                                <span class="badge bg-outline-secondary me-1">Электромагнетизм</span>
+                            </div>
+
+                            <h6>Инструменты:</h6>
+                            <div class="mb-3">
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>ANSYS</span>
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>COMSOL</span>
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>Abaqus</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-secondary flex-fill" onclick="learnMethod('Метод конечных элементов')">
+                                    <i data-lucide="book-open" class="me-2"></i>Изучить
+                                </button>
+                                <button class="btn btn-outline-secondary flex-fill" onclick="practiceMethod('Метод конечных элементов')">
+                                    <i data-lucide="play-circle" class="me-2"></i>Практика
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neural Network Modeling -->
+                <div class="col-lg-6">
+                    <div class="card h-100 method-card">
+                        <div class="card-header bg-dark text-white">
+                            <h5 class="card-title mb-0">
+                                <i data-lucide="brain" class="me-2"></i>
+                                Нейросетевое моделирование
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Использование искусственных нейронных сетей для моделирования</p>
+                            
+                            <div class="mb-3">
+                                <div class="d-flex gap-2 mb-2">
+                                    <span class="badge bg-warning">Средний</span>
+                                    <span class="badge bg-info">Машинное обучение</span>
+                                </div>
+                                <small class="text-muted">⏱️ 80 мин</small>
+                            </div>
+
+                            <h6>Ключевые концепции:</h6>
+                            <ul class="list-unstyled">
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Архитектура сетей</li>
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Алгоритмы обучения</li>
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Функции активации</li>
+                                <li><i data-lucide="check-circle" class="text-success me-2"></i>Регуляризация</li>
+                            </ul>
+
+                            <h6>Области применения:</h6>
+                            <div class="mb-3">
+                                <span class="badge bg-outline-secondary me-1">Прогнозирование</span>
+                                <span class="badge bg-outline-secondary me-1">Классификация</span>
+                                <span class="badge bg-outline-secondary me-1">Оптимизация</span>
+                            </div>
+
+                            <h6>Инструменты:</h6>
+                            <div class="mb-3">
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>TensorFlow</span>
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>PyTorch</span>
+                                <span class="badge bg-warning me-1"><i data-lucide="code" class="me-1"></i>Keras</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-dark flex-fill" onclick="learnMethod('Нейросетевое моделирование')">
+                                    <i data-lucide="book-open" class="me-2"></i>Изучить
+                                </button>
+                                <button class="btn btn-outline-dark flex-fill" onclick="practiceMethod('Нейросетевое моделирование')">
+                                    <i data-lucide="play-circle" class="me-2"></i>Практика
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="mt-5">
+                <div class="card bg-light border-0">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Готовы применить знания?</h5>
+                        <p class="card-text">Переходите к практическим примерам и интерактивным заданиям</p>
+                        <div class="d-flex justify-content-center gap-3">
+                            <a href="examples.html" class="btn btn-primary">
+                                <i data-lucide="lightbulb" class="me-2"></i>
+                                Изучить примеры
+                            </a>
+                            <a href="practice.html" class="btn btn-outline-primary">
+                                <i data-lucide="play-circle" class="me-2"></i>
+                                Перейти к практике
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 SimuLearn. Образовательный портал по имитационному моделированию.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

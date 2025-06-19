@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практика - Имитационное моделирование</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div class="logo-icon me-3">
+                    <i data-lucide="brain-circuit"></i>
+                </div>
+                <div>
+                    <div class="logo-title">SimuLearn</div>
+                    <div class="logo-subtitle">Имитационное моделирование</div>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i data-lucide="home"></i>
+                            Главная
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="theory.html">
+                            <i data-lucide="book-open"></i>
+                            Теория
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="methods.html">
+                            <i data-lucide="target"></i>
+                            Методы
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="examples.html">
+                            <i data-lucide="lightbulb"></i>
+                            Примеры
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="practice.html">
+                            <i data-lucide="play-circle"></i>
+                            Практика
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tests.html">
+                            <i data-lucide="check-circle"></i>
+                            Тесты
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-bold mb-3 text-dark">Интерактивная практика</h1>
+                <p class="lead text-muted">
+                    Применяйте полученные знания на практике с помощью 
+                    интерактивных заданий и симуляторов
+                </p>
+            </div>
+
+            <!-- Practice Modules -->
+            <div class="row g-4">
+                <!-- Module 1: Random Number Generation -->
+                <div class="col-lg-6">
+                    <div class="card h-100 practice-card">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="card-title mb-0">
+                                <i data-lucide="shuffle" class="me-2"></i>
+                                Модуль 1: Генерация случайных чисел
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-dark">Изучите различные методы генерации псевдослучайных чисел.</p>
+                            
+                            <div class="mb-3">
+                                <label for="rngMethod" class="form-label text-dark">Метод генерации:</label>
+                                <select class="form-select" id="rngMethod">
+                                    <option value="lcg">Линейный конгруэнтный</option>
+                                    <option value="mersenne">Mersenne Twister</option>
+                                    <option value="builtin">Встроенный Math.random()</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="rngCount" class="form-label text-dark">Количество чисел:</label>
+                                <input type="number" class="form-control" id="rngCount" value="1000" min="100" max="10000">
+                            </div>
+                            
+                            <button class="btn btn-primary" onclick="generateRandomNumbers()">
+                                <i data-lucide="play" class="me-2"></i>
+                                Генерировать
+                            </button>
+                            
+                            <div id="rngResults" class="mt-3" style="display: none;">
+                                <canvas id="rngChart" width="400" height="200"></canvas>
+                                <div id="rngStats" class="mt-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 2: Monte Carlo -->
+                <div class="col-lg-6">
+                    <div class="card h-100 practice-card">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="card-title mb-0">
+                                <i data-lucide="target" class="me-2"></i>
+                                Модуль 2: Метод Монте-Карло
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-dark">Вычислите значение π методом Монте-Карло.</p>
+                            
+                            <div class="mb-3">
+                                <label for="mcIterations" class="form-label text-dark">Количество точек:</label>
+                                <input type="range" class="form-range" id="mcIterations" min="1000" max="100000" value="10000" step="1000">
+                                <span id="mcIterationsValue" class="text-muted small">10000</span>
+                            </div>
+                            
+                            <button class="btn btn-success" onclick="calculatePi()">
+                                <i data-lucide="calculator" class="me-2"></i>
+                                Вычислить π
+                            </button>
+                            
+                            <div id="mcResults" class="mt-3" style="display: none;">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <canvas id="mcVisualization" width="200" height="200"></canvas>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div id="mcStats" class="text-dark"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 3: Queuing System -->
+                <div class="col-lg-6">
+                    <div class="card h-100 practice-card">
+                        <div class="card-header bg-warning text-dark">
+                            <h5 class="card-title mb-0">
+                                <i data-lucide="users" class="me-2"></i>
+                                Модуль 3: Система массового обслуживания
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-dark">Смоделируйте работу банка с несколькими операционистами.</p>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="queueArrival" class="form-label text-dark">Интервал прибытия (сек):</label>
+                                        <input type="number" class="form-control" id="queueArrival" value="30" min="10" max="120">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="queueService" class="form-label text-dark">Время обслуживания (сек):</label>
+                                        <input type="number" class="form-control" id="queueService" value="45" min="20" max="180">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="queueServers" class="form-label text-dark">Количество операционистов:</label>
+                                <input type="range" class="form-range" id="queueServers" min="1" max="5" value="2">
+                                <span id="queueServersValue" class="text-muted small">2</span>
+                            </div>
+                            
+                            <button class="btn btn-warning text-dark" onclick="startQueueSimulation()">
+                                <i data-lucide="play" class="me-2"></i>
+                                Запустить симуляцию
+                            </button>
+                            <button class="btn btn-outline-secondary" onclick="stopQueueSimulation()" disabled id="stopQueueBtn">
+                                <i data-lucide="stop-circle" class="me-2"></i>
+                                Остановить
+                            </button>
+                            
+                            <div id="queueVisualizer" class="mt-3" style="display: none;">
+                                <div class="queue-display p-3 bg-light rounded">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <h6 class="text-dark">Очередь:</h6>
+                                            <div id="queueLine" class="d-flex flex-wrap"></div>
+                                        </div>
+                                        <div class="col-4">
+                                            <h6 class="text-dark">Операционисты:</h6>
+                                            <div id="queueServersDisplay"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-3">
+                                        <div id="queueStats" class="text-dark small"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 4: Population Dynamics -->
+                <div class="col-lg-6">
+                    <div class="card h-100 practice-card">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="card-title mb-0">
+                                <i data-lucide="trending-up" class="me-2"></i>
+                                Модуль 4: Динамика популяции
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-dark">Моделирование роста популяции с учетом ограничений среды.</p>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="popInitial" class="form-label text-dark">Начальная популяция:</label>
+                                        <input type="number" class="form-control" id="popInitial" value="100" min="10" max="1000">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="popGrowthRate" class="form-label text-dark">Скорость роста:</label>
+                                        <input type="number" class="form-control" id="popGrowthRate" value="0.1" step="0.01" min="0.01" max="0.5">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="popCapacity" class="form-label text-dark">Предельная емкость:</label>
+                                <input type="number" class="form-control" id="popCapacity" value="1000" min="500" max="5000">
+                            </div>
+                            
+                            <button class="btn btn-info text-white" onclick="simulatePopulation()">
+                                <i data-lucide="activity" class="me-2"></i>
+                                Моделировать
+                            </button>
+                            
+                            <div id="popResults" class="mt-3" style="display: none;">
+                                <canvas id="popChart" width="400" height="200"></canvas>
+                                <div id="popAnalysis" class="mt-2 text-dark small"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Tracking -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="card bg-light">
+                        <div class="card-header">
+                            <h4 class="text-dark mb-0">
+                                <i data-lucide="trophy" class="me-2"></i>
+                                Ваш прогресс
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3 text-center">
+                                    <div class="progress-item">
+                                        <div class="progress-circle" data-module="1">
+                                            <span class="progress-text text-dark">0%</span>
+                                        </div>
+                                        <p class="mt-2 text-dark small">Генерация чисел</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <div class="progress-item">
+                                        <div class="progress-circle" data-module="2">
+                                            <span class="progress-text text-dark">0%</span>
+                                        </div>
+                                        <p class="mt-2 text-dark small">Монте-Карло</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <div class="progress-item">
+                                        <div class="progress-circle" data-module="3">
+                                            <span class="progress-text text-dark">0%</span>
+                                        </div>
+                                        <p class="mt-2 text-dark small">Очереди</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <div class="progress-item">
+                                        <div class="progress-circle" data-module="4">
+                                            <span class="progress-text text-dark">0%</span>
+                                        </div>
+                                        <p class="mt-2 text-dark small">Популяция</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <button class="btn btn-outline-primary" onclick="resetProgress()">
+                                    <i data-lucide="refresh-cw" class="me-2"></i>
+                                    Сбросить прогресс
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 SimuLearn. Образовательный портал по имитационному моделированию.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    
+    <script>
+    // Practice Module Scripts
+    let queueSimulationInterval;
+    let queueData = {
+        queue: [],
+        servers: [],
+        totalCustomers: 0,
+        totalWaitTime: 0,
+        completedCustomers: 0
+    };
+
+    // Update slider values
+    document.getElementById('mcIterations').addEventListener('input', function() {
+        document.getElementById('mcIterationsValue').textContent = this.value;
+    });
+
+    document.getElementById('queueServers').addEventListener('input', function() {
+        document.getElementById('queueServersValue').textContent = this.value;
+    });
+
+    // Module 1: Random Number Generation
+    function generateRandomNumbers() {
+        const method = document.getElementById('rngMethod').value;
+        const count = parseInt(document.getElementById('rngCount').value);
+        
+        let numbers = [];
+        
+        // Generate numbers based on selected method
+        for (let i = 0; i < count; i++) {
+            if (method === 'lcg') {
+                numbers.push(lcgRandom());
+            } else if (method === 'mersenne') {
+                numbers.push(Math.random()); // Simplified - would need actual Mersenne implementation
+            } else {
+                numbers.push(Math.random());
+            }
+        }
+        
+        // Create histogram
+        const canvas = document.getElementById('rngChart');
+        const ctx = canvas.getContext('2d');
+        drawHistogram(ctx, numbers, canvas.width, canvas.height);
+        
+        // Calculate statistics
+        const mean = numbers.reduce((a, b) => a + b) / numbers.length;
+        const variance = numbers.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / numbers.length;
+        
+        document.getElementById('rngStats').innerHTML = `
+            <div class="text-dark small">
+                <strong>Статистика:</strong><br>
+                Среднее: ${mean.toFixed(4)}<br>
+                Дисперсия: ${variance.toFixed(4)}<br>
+                Метод: ${method}
+            </div>
+        `;
+        
+        document.getElementById('rngResults').style.display = 'block';
+        updateProgress(1, 25);
+    }
+
+    // Simple LCG implementation
+    let lcgSeed = 12345;
+    function lcgRandom() {
+        lcgSeed = (lcgSeed * 1664525 + 1013904223) % Math.pow(2, 32);
+        return lcgSeed / Math.pow(2, 32);
+    }
+
+    // Module 2: Monte Carlo Pi calculation
+    function calculatePi() {
+        const iterations = parseInt(document.getElementById('mcIterations').value);
+        let inside = 0;
+        let points = [];
+        
+        for (let i = 0; i < iterations; i++) {
+            const x = Math.random() * 2 - 1;
+            const y = Math.random() * 2 - 1;
+            const distance = x * x + y * y;
+            
+            if (distance <= 1) inside++;
+            
+            if (i < 1000) { // Store first 1000 points for visualization
+                points.push({x, y, inside: distance <= 1});
+            }
+        }
+        
+        const piEstimate = 4 * inside / iterations;
+        const error = Math.abs(Math.PI - piEstimate);
+        
+        // Visualize
+        const canvas = document.getElementById('mcVisualization');
+        const ctx = canvas.getContext('2d');
+        drawMonteCarloVisualization(ctx, points, canvas.width, canvas.height);
+        
+        document.getElementById('mcStats').innerHTML = `
+            <strong>Результаты:</strong><br>
+            Точек внутри: ${inside}<br>
+            Всего точек: ${iterations}<br>
+            Оценка π: ${piEstimate.toFixed(6)}<br>
+            Истинное π: ${Math.PI.toFixed(6)}<br>
+            Ошибка: ${error.toFixed(6)}
+        `;
+        
+        document.getElementById('mcResults').style.display = 'block';
+        updateProgress(2, 50);
+    }
+
+    // Module 3: Queue simulation
+    function startQueueSimulation() {
+        const arrivalInterval = parseInt(document.getElementById('queueArrival').value) * 1000;
+        const serviceTime = parseInt(document.getElementById('queueService').value) * 1000;
+        const serverCount = parseInt(document.getElementById('queueServers').value);
+        
+        // Initialize simulation
+        queueData = {
+            queue: [],
+            servers: new Array(serverCount).fill(null),
+            totalCustomers: 0,
+            totalWaitTime: 0,
+            completedCustomers: 0,
+            startTime: Date.now()
+        };
+        
+        document.getElementById('queueVisualizer').style.display = 'block';
+        document.getElementById('stopQueueBtn').disabled = false;
+        
+        // Start simulation
+        queueSimulationInterval = setInterval(() => {
+            // Add new customer
+            if (Math.random() < 0.7) { // 70% chance of new customer
+                queueData.queue.push({
+                    id: ++queueData.totalCustomers,
+                    arrivalTime: Date.now()
+                });
+            }
+            
+            // Process servers
+            for (let i = 0; i < queueData.servers.length; i++) {
+                if (queueData.servers[i] === null && queueData.queue.length > 0) {
+                    // Start serving customer
+                    const customer = queueData.queue.shift();
+                    queueData.servers[i] = {
+                        customer: customer,
+                        endTime: Date.now() + serviceTime + Math.random() * serviceTime
+                    };
+                    queueData.totalWaitTime += Date.now() - customer.arrivalTime;
+                } else if (queueData.servers[i] && Date.now() >= queueData.servers[i].endTime) {
+                    // Finish serving customer
+                    queueData.servers[i] = null;
+                    queueData.completedCustomers++;
+                }
+            }
+            
+            updateQueueVisualization();
+        }, 1000);
+        
+        setTimeout(stopQueueSimulation, 30000); // Auto-stop after 30 seconds
+    }
+
+    function stopQueueSimulation() {
+        if (queueSimulationInterval) {
+            clearInterval(queueSimulationInterval);
+            queueSimulationInterval = null;
+            document.getElementById('stopQueueBtn').disabled = true;
+            updateProgress(3, 75);
+        }
+    }
+
+    function updateQueueVisualization() {
+        // Update queue display
+        const queueLine = document.getElementById('queueLine');
+        queueLine.innerHTML = '';
+        queueData.queue.slice(0, 10).forEach(customer => {
+            const customerDiv = document.createElement('div');
+            customerDiv.className = 'customer-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2 mb-2';
+            customerDiv.style.width = '30px';
+            customerDiv.style.height = '30px';
+            customerDiv.style.fontSize = '12px';
+            customerDiv.textContent = customer.id;
+            queueLine.appendChild(customerDiv);
+        });
+        
+        if (queueData.queue.length > 10) {
+            const moreDiv = document.createElement('div');
+            moreDiv.className = 'text-muted small align-self-center';
+            moreDiv.textContent = `+${queueData.queue.length - 10} еще`;
+            queueLine.appendChild(moreDiv);
+        }
+        
+        // Update servers display
+        const serversDisplay = document.getElementById('queueServersDisplay');
+        serversDisplay.innerHTML = '';
+        queueData.servers.forEach((server, i) => {
+            const serverDiv = document.createElement('div');
+            serverDiv.className = `server-icon ${server ? 'bg-success' : 'bg-secondary'} text-white rounded d-flex align-items-center justify-content-center mb-2`;
+            serverDiv.style.width = '40px';
+            serverDiv.style.height = '40px';
+            serverDiv.style.fontSize = '12px';
+            serverDiv.textContent = server ? server.customer.id : `${i + 1}`;
+            serversDisplay.appendChild(serverDiv);
+        });
+        
+        // Update statistics
+        const avgWaitTime = queueData.completedCustomers > 0 ? queueData.totalWaitTime / queueData.completedCustomers / 1000 : 0;
+        document.getElementById('queueStats').innerHTML = `
+            В очереди: ${queueData.queue.length} | 
+            Обслужено: ${queueData.completedCustomers} | 
+            Среднее время ожидания: ${avgWaitTime.toFixed(1)} сек
+        `;
+    }
+
+    // Module 4: Population dynamics
+    function simulatePopulation() {
+        const initial = parseInt(document.getElementById('popInitial').value);
+        const growthRate = parseFloat(document.getElementById('popGrowthRate').value);
+        const capacity = parseInt(document.getElementById('popCapacity').value);
+        
+        let population = [initial];
+        let time = [0];
+        
+        // Logistic growth model
+        for (let t = 1; t <= 50; t++) {
+            const prev = population[t - 1];
+            const next = prev + growthRate * prev * (1 - prev / capacity);
+            population.push(Math.max(0, next));
+            time.push(t);
+        }
+        
+        // Draw chart
+        const canvas = document.getElementById('popChart');
+        const ctx = canvas.getContext('2d');
+        drawLineChart(ctx, time, population, canvas.width, canvas.height);
+        
+        // Analysis
+        const finalPop = population[population.length - 1];
+        const stabilized = Math.abs(finalPop - capacity) < capacity * 0.05;
+        
+        document.getElementById('popAnalysis').innerHTML = `
+            <strong>Анализ:</strong><br>
+            Финальная популяция: ${Math.round(finalPop)}<br>
+            Предельная емкость: ${capacity}<br>
+            Стабилизация: ${stabilized ? 'Да' : 'Нет'}<br>
+            Время стабилизации: ${stabilized ? '~' + time.findIndex(t => Math.abs(population[t] - capacity) < capacity * 0.1) + ' периодов' : 'Не достигнута'}
+        `;
+        
+        document.getElementById('popResults').style.display = 'block';
+        updateProgress(4, 100);
+    }
+
+    // Helper functions for drawing charts
+    function drawHistogram(ctx, data, width, height) {
+        ctx.clearRect(0, 0, width, height);
+        ctx.fillStyle = '#0d6efd';
+        
+        const bins = 20;
+        const binSize = 1 / bins;
+        const counts = new Array(bins).fill(0);
+        
+        data.forEach(value => {
+            const bin = Math.min(Math.floor(value / binSize), bins - 1);
+            counts[bin]++;
+        });
+        
+        const maxCount = Math.max(...counts);
+        const binWidth = width / bins;
+        
+        counts.forEach((count, i) => {
+            const barHeight = (count / maxCount) * (height - 20);
+            ctx.fillRect(i * binWidth, height - barHeight, binWidth - 1, barHeight);
+        });
+    }
+
+    function drawMonteCarloVisualization(ctx, points, width, height) {
+        ctx.clearRect(0, 0, width, height);
+        
+        // Draw circle
+        ctx.strokeStyle = '#000';
+        ctx.beginPath();
+        ctx.arc(width/2, height/2, width/2 - 10, 0, 2 * Math.PI);
+        ctx.stroke();
+        
+        // Draw points
+        const radius = width/2 - 10;
+        points.forEach(point => {
+            ctx.fillStyle = point.inside ? '#28a745' : '#dc3545';
+            ctx.beginPath();
+            const x = width/2 + point.x * radius;
+            const y = height/2 + point.y * radius;
+            ctx.arc(x, y, 1, 0, 2 * Math.PI);
+            ctx.fill();
+        });
+    }
+
+    function drawLineChart(ctx, xData, yData, width, height) {
+        ctx.clearRect(0, 0, width, height);
+        
+        const maxX = Math.max(...xData);
+        const maxY = Math.max(...yData);
+        const padding = 40;
+        
+        ctx.strokeStyle = '#0d6efd';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        
+        yData.forEach((y, i) => {
+            const x = padding + (xData[i] / maxX) * (width - 2 * padding);
+            const plotY = height - padding - (y / maxY) * (height - 2 * padding);
+            
+            if (i === 0) {
+                ctx.moveTo(x, plotY);
+            } else {
+                ctx.lineTo(x, plotY);
+            }
+        });
+        
+        ctx.stroke();
+        
+        // Draw axes
+        ctx.strokeStyle = '#666';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(padding, padding);
+        ctx.lineTo(padding, height - padding);
+        ctx.lineTo(width - padding, height - padding);
+        ctx.stroke();
+    }
+
+    // Progress tracking
+    function updateProgress(module, percentage) {
+        const circle = document.querySelector(`.progress-circle[data-module="${module}"]`);
+        const text = circle.querySelector('.progress-text');
+        
+        circle.style.background = `conic-gradient(#28a745 ${percentage * 3.6}deg, #e9ecef 0deg)`;
+        text.textContent = `${percentage}%`;
+        
+        // Save progress
+        localStorage.setItem(`practice_module_${module}`, percentage);
+    }
+
+    function resetProgress() {
+        for (let i = 1; i <= 4; i++) {
+            const circle = document.querySelector(`.progress-circle[data-module="${i}"]`);
+            const text = circle.querySelector('.progress-text');
+            
+            circle.style.background = '#e9ecef';
+            text.textContent = '0%';
+            
+            localStorage.removeItem(`practice_module_${i}`);
+        }
+    }
+
+    // Load saved progress
+    window.addEventListener('load', function() {
+        for (let i = 1; i <= 4; i++) {
+            const savedProgress = localStorage.getItem(`practice_module_${i}`);
+            if (savedProgress) {
+                updateProgress(i, parseInt(savedProgress));
+            }
+        }
+    });
+    </script>
+</body>
+</html>

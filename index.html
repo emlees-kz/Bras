@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Имитационное моделирование - Образовательный портал</title>
+    <meta name="description" content="Образовательный портал по имитационному моделированию">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div class="logo-icon me-3">
+                    <i data-lucide="brain-circuit"></i>
+                </div>
+                <div>
+                    <div class="logo-title">SimuLearn</div>
+                    <div class="logo-subtitle">Имитационное моделирование</div>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i data-lucide="home"></i>
+                            Главная
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="theory.html">
+                            <i data-lucide="book-open"></i>
+                            Теория
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="methods.html">
+                            <i data-lucide="target"></i>
+                            Методы
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="examples.html">
+                            <i data-lucide="lightbulb"></i>
+                            Примеры
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="practice.html">
+                            <i data-lucide="play-circle"></i>
+                            Практика
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tests.html">
+                            <i data-lucide="check-circle"></i>
+                            Тесты
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5">
+        <div class="container">
+            <div class="row align-items-center min-vh-75">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4 animate-fade-in">
+                        Изучите 
+                        <span class="text-gradient">имитационное моделирование</span>
+                    </h1>
+                    <p class="lead mb-4 text-muted">
+                        Комплексный образовательный портал для изучения методов и техник 
+                        имитационного моделирования. От теории до практического применения.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row gap-3">
+                        <a href="theory.html" class="btn btn-primary btn-lg">
+                            <i data-lucide="arrow-right" class="me-2"></i>
+                            Начать изучение
+                        </a>
+                        <a href="examples.html" class="btn btn-outline-primary btn-lg">
+                            Посмотреть примеры
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="hero-image">
+                        <i data-lucide="brain-circuit" style="width: 300px; height: 300px;" class="text-primary opacity-75"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3col-6  text-center">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Тем для изучения</div>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Практических задач</div>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Примеров моделей</div>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Бесплатный доступ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Что вы не изучите</h2>
+                <p class="lead text-muted">
+                    Структурированный подход к изучению имитационного моделирования 
+                    с практическими примерами и интерактивными заданиями
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body">
+                            <div class="feature-icon text-primary mb-3">
+                                <i data-lucide="book-open"></i>
+                            </div>
+                            <h5 class="card-title">Теоретические основы</h5>
+                            <p class="card-text">Изучите фундаментальные концепции и принципы имитационного моделирования</p>
+                            <a href="theory.html" class="btn btn-outline-primary">
+                                Подробнее <i data-lucide="arrow-right" class="ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body">
+                            <div class="feature-icon text-success mb-3">
+                                <i data-lucide="target"></i>
+                            </div>
+                            <h5 class="card-title">Методы и подходы</h5>
+                            <p class="card-text">Освойте различные методы моделирования и их практическое применение</p>
+                            <a href="methods.html" class="btn btn-outline-success">
+                                Подробнее <i data-lucide="arrow-right" class="ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body">
+                            <div class="feature-icon text-warning mb-3">
+                                <i data-lucide="lightbulb"></i>
+                            </div>
+                            <h5 class="card-title">Практические примеры</h5>
+                            <p class="card-text">Разберите реальные кейсы и примеры использования в различных областях</p>
+                            <a href="examples.html" class="btn btn-outline-warning">
+                                Подробнее <i data-lucide="arrow-right" class="ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body">
+                            <div class="feature-icon text-info mb-3">
+                                <i data-lucide="play-circle"></i>
+                            </div>
+                            <h5 class="card-title">Интерактивная практика</h5>
+                            <p class="card-text">Попрактикуйтесь в создании и анализе моделей с помощью инструментов</p>
+                            <a href="practice.html" class="btn btn-outline-info">
+                                Подробнее <i data-lucide="arrow-right" class="ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h5 class="display-5 fw-bold mb-3">Готовы начать изучение?</h5>
+            <p class="lead mb-4">
+                Присоединяйтесь к тысячам студентов, которые уже изучают 
+                имитационное моделирование с нашими материалами
+            </p>
+            <a href="theory.html" class="btn btn-light btn-lg">
+                <i data-lucide="users" class="me-2"></i>
+                Начать прямо сейчас
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Омурбеков Барсбек. Образовательный портал по имитационному моделированию.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
